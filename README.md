@@ -1,1 +1,1 @@
-# IspitniAPS
+# Ispitni zadachi : Listi i heshiranje.

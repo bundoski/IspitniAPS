@@ -32,18 +32,20 @@ public class sedmaZadacha {
         for (int i = 0; i < numberOfElements; i++)
             integerSLL.insertLast(Integer.parseInt(elements[i]));
 
-        int numberOfSteps = 1;
-        int numberOfStepsChangeable = 1;
+        int stepsMade = 1;
+        int stepsUntilChange = 1;
+
         SLLNode<Integer> node = integerSLL.getFirst();
-        while(node != null) {
-            if(numberOfStepsChangeable == 0) {
-                SLLNode<Integer> tempNode = node.succ;
+        while(node!=null){
+            if(stepsUntilChange==0){
+                SLLNode<Integer> tmp = node.succ;
                 integerSLL.delete(node);
-                numberOfStepsChangeable = ++numberOfSteps;
-                node = tempNode;
-            } else {
-                numberOfStepsChangeable--;
-                node = node.succ;
+                stepsUntilChange = ++stepsMade;
+                node = tmp;
+            }
+            else{
+                stepsUntilChange--;
+                node=node.succ;
             }
         }
 
